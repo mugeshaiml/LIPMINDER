@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Text Extractor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .upload-section {
+            border: 2px dashed #ccc;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .result-section {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+        }
+        #uploadBtn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #uploadBtn:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .loading {
+            display: none;
+            margin: 20px 0;
+        }
+        #error {
+            display: none;
+            color: #dc3545;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .file-requirements {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Video Text Extractor</h1>
+        <div class="upload-section">
+            <p>Upload your MP4 video file to extract spoken text</p>
+            <input type="file" id="videoFile" accept="video/mp4" style="display: none;">
+            <button id="uploadBtn">Choose Video File</button>
+            <div class="file-requirements">
+                <p>Requirements:</p>
+                <ul>
+                    <li>MP4 format only</li>
+                    <li>Maximum file size: 50MB</li>
+                    <li>Clear speech audio recommended</li>
+                </ul>
+            </div>
+        </div>
+        <div id="error"></div>
+        <div class="loading" id="loading">
+            Processing video... This may take a few minutes.
+        </div>
+        <div class="result-section">
+            <h2>Extracted Text:</h2>
+            <div id="result"></div>
+        </div>
+    </div>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
